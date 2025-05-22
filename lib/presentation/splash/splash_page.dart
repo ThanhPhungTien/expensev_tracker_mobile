@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../core/router_config.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -12,7 +15,14 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Center(child: CircularProgressIndicator()),
+      body: Center(
+        child: ElevatedButton(
+          child: Text('login'),
+          onPressed: () {
+            context.goNamed(RouteName.login);
+          },
+        ),
+      ),
     );
   }
 }
